@@ -29,8 +29,16 @@ button, input {
   justify-content: center;
   font-size: 64px;
   font-weight: bold;
+  line-height: 1;
 }
 
 .pivot {
   color: red;
+  display: inline;
 }
+
+.word {
+  white-space: nowrap;
+  display: inline-block;
+}
+
