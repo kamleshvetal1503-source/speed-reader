@@ -32,13 +32,29 @@ button, input {
   line-height: 1;
 }
 
-.pivot {
-  color: red;
-  display: inline;
-}
-
 .word {
   white-space: nowrap;
-  display: inline-block;
 }
+
+.pivot {
+  color: red;
+}
+
+/* Invisible spacer to align pivot */
+.spacer {
+  display: inline-block;
+  width: 0;
+}
+
+#word-container {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1;
+  color: white;
+  width: 420px;          /* FIXED width */
+  text-align: left;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
 
