@@ -6,12 +6,13 @@ function formatWord(word) {
   const len = word.length;
   const pivotIndex = Math.floor(len / 2);
 
-  return `
-    ${word.slice(0, pivotIndex)}
-    <span class="pivot">${word[pivotIndex]}</span>
-    ${word.slice(pivotIndex + 1)}
-  `;
+  const before = word.slice(0, pivotIndex);
+  const pivot = word[pivotIndex];
+  const after = word.slice(pivotIndex + 1);
+
+  return `<span class="word">${before}<span class="pivot">${pivot}</span>${after}</span>`;
 }
+
 
 function start() {
   if (interval) return;
@@ -46,3 +47,4 @@ function resetReader() {
   index = 0;
   document.getElementById("word").textContent = "Ready?";
 }
+
