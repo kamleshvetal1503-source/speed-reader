@@ -3,6 +3,7 @@ let index = 0;
 let interval = null;
 
 function formatWord(word) {
+  const maxPivot = 10; // fixed ORP position (character-based)
   const len = word.length;
   const pivotIndex = Math.floor(len / 2);
 
@@ -10,8 +11,12 @@ function formatWord(word) {
   const pivot = word[pivotIndex];
   const after = word.slice(pivotIndex + 1);
 
-  return `<span class="word">${before}<span class="pivot">${pivot}</span>${after}</span>`;
+  const padCount = maxPivot - before.length;
+  const padding = padCount > 0 ? "&nbsp;".repeat(padCount) : "";
+
+  return `${padding}${before}<span class="pivot">${pivot}</span>${after}`;
 }
+
 
 
 function start() {
@@ -47,4 +52,5 @@ function resetReader() {
   index = 0;
   document.getElementById("word").textContent = "Ready?";
 }
+
 
